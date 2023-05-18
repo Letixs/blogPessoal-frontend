@@ -1,3 +1,66 @@
-.appbar{
-    background-color: #0d5997;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+ul {
+    margin-right: 80px;
+    display: flex;
+    align-items: center;
+    color: rgb(252, 254, 255);
+}
+
+li {
+    list-style-type: none;
+    margin-left: 35px;
+}
+
+h1,
+button {
+    color: rgb(252, 254, 255);
+    padding: 8px;
+
+}
+
+.login {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: transparent;
+    font-weight: 700;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 18px;
+    margin-left: 18px;
+    margin-right: 18px;
+    position: relative;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.logo {
+    margin-top: 8px;
+    width: 90px;
+    padding-left: 10%;
+    margin-bottom: 6px;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    ul {
+        margin-left: 60px;
+    }
+
+    .logo {
+        padding-right: 30px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
 }

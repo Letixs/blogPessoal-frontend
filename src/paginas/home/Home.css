@@ -1,20 +1,28 @@
-.home{
-    margin: 0;
-    background: linear-gradient(-45deg, #2f63b5, #3c86e7, #23a6d5, #4566ad);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+.background {
+    background-image: url(../../assets/images/backg.png);
+    background-size: cover;
+    background-position: center;
     height: 100vh;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }
-    @keyframes gradient {
-        0% {
-            background-position: 0% 50%;
-        }
 
-        50% {
-            background-position: 100% 50%;
-        }
+.home{
+    margin-top: 1000px;
+}
 
-        100% {
-            background-position: 0% 50%;
-        }
+
+@media (max-width: 600px) {
+    .home{
+        margin-top: 140px;
     }
+
+    .background{
+        background-position: 20%;
+    }
+}
