@@ -8,10 +8,13 @@ function Home() {
     return (
         <>
             <Grid item xs={12} className='background'>
-                <Grid>
+                <Grid item xs={12} className='home'>
                     <Box >
-                    <h1>aaaaaaaaaa</h1>
-                </Box>
+                        <h1>aaaaaaaaaa</h1>
+                    </Box>
+                    <Box>
+                        <h2>eeeeeeeeeeeee</h2>
+                    </Box>
                 </Grid>
             </Grid>
         </>

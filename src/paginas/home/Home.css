@@ -1,6 +1,6 @@
 .background {
-    background-image: url(../../assets/images/backg.png);
-    background-size: cover;
+    background-image: url(../../assets/images/backg4.jpg);
+    background-size:cover;
     background-position: center;
     height: 100vh;
     display: flex;
@@ -10,10 +10,12 @@
     right: 0;
     bottom: 0;
     z-index: -1;
+  
 }
 
 .home{
-    margin-top: 1000px;
+    padding-top: 95px;
+    height: 100%;
 }
 
 

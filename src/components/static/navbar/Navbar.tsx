@@ -1,23 +1,28 @@
 import React from 'react';
 import './Navbar.css'
 import { Container } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
 
     return (
         <nav className='navbar'>
             <img className='logo' src="src\assets\images\logo.png" alt="" />
-            <ul>
-                <li>
-                    <h3>Home</h3>
+            <ul className='barra'>
+                <li className='listaNav'>
+                    <Link to="/">Home</Link>
                 </li>
-                <li>
-                    <h3>Posts</h3>
-                </li>  
-                <li>
-                    <h3>Contato</h3>
+                <li className='listaNav'>
+                    <Link to="/posts">Posts</Link>
                 </li>
-                <button className="login"><span>Login</span></button>
+                <li className='listaNav'>
+                    <Link to="/contato">Contato</Link>
+                </li>
+                <div className='buttonContainer'>
+                    <Link to='/Login'>
+                        <button className="login"><span>Login</span></button>
+                    </Link>
+                </div>
             </ul>
         </nav>
     );
