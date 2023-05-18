@@ -7,10 +7,12 @@ import Carrossel from '../../components/carrossel/Carrossel';
 function Home() {
     return (
         <>
-            <Grid className='background'>
-                <Box >
+            <Grid item xs={12} className='background'>
+                <Grid>
+                    <Box >
                     <h1>aaaaaaaaaa</h1>
                 </Box>
+                </Grid>
             </Grid>
         </>
     );
