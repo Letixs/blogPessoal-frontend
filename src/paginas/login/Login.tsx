@@ -5,7 +5,7 @@ import { Box } from '@mui/material';
 function Home() {
     return (
         <>
-          <h1>Login</h1>
+          <a href="https://github.com/Letixs/blogPessoal-frontend">Login</a>
         </>
     );
 }
