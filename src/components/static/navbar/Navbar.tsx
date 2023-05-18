@@ -18,6 +18,9 @@ export default function Navbar() {
                 <li className='listaNav'>
                     <Link to="/contato">Contato</Link>
                 </li>
+                <li className='listaNav'>
+                    <Link to="/temas">Temas</Link>
+                </li>
                 <div className='buttonContainer'>
                     <Link to='/Login'>
                         <button className="login"><span>Login</span></button>

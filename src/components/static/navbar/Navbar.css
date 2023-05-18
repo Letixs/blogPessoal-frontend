@@ -25,7 +25,6 @@
     color: #efeaea;
     font-size: large;
     padding: 8px;
-    border-radius: 18px;
     position: relative;
 }
   
@@ -86,11 +85,10 @@
     .navbar {
         flex-direction: column;
         align-items: center;
-
     }
 
-    ul {
-        margin-left: 60px;
+    .listaNav {
+        margin-left: 40px;
     }
 
     .logo {
