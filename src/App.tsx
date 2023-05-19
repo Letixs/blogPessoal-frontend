@@ -7,6 +7,7 @@ import Posts from './paginas/postagens/Posts'
 import Temas from './paginas/temas/Temas'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/posts" element={<Posts />} />
             <Route path="/temas" element={<Temas />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/cadastro" element={<CadastroUsuario />} />
           </ Routes>
         </div>
         <Footer />

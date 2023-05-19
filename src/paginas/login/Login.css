@@ -1,13 +1,19 @@
 .backgroundLogin {
     background-image: url(../../assets/images/desktop-1920x1080.jpg);
-    background-size:cover;
+    background-size: cover;
     background-position: center;
-    height: 80vh;
-    display: flex;
-    position: absolute;
-    top: 0;
+    min-height: 100vh; /* Ocupa toda a altura da tela */
+    width: 100%; /* Ocupa toda a largura da tela */
+   
+    top: 50px; /* Altura da navbar */
     left: 0;
-    right: 0;
-    bottom: 0;
     z-index: -1;
-}
+  }
+
+  .textos1{
+    font-weight: bold !important;
+ }
+ 
+ .text-decorator-none{
+     text-decoration: none;
+ }
