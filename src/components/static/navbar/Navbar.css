@@ -19,7 +19,7 @@
     width: 65px;
 }
 
-.listaNav a{
+.listaNav a {
     display: inline-block;
     text-decoration: none;
     color: #efeaea;
@@ -27,8 +27,8 @@
     padding: 8px;
     position: relative;
 }
-  
-  .listaNav a::after {
+
+.listaNav a::after {
     content: "";
     position: absolute;
     bottom: 0;
@@ -39,13 +39,13 @@
     transform: scaleX(0);
     transition: transform 0.3s ease-in-out;
     transform-origin: left;
-  }
-  
-  .listaNav a:hover::after {
-    transform: scaleX(1);
-  }
+}
 
-.buttonContainer{
+.listaNav a:hover::after {
+    transform: scaleX(1);
+}
+
+.buttonContainer {
     margin-left: 30px;
     margin-right: 40px;
 }
@@ -65,7 +65,7 @@
     cursor: pointer;
 }
 
-.login:hover{
+.login:hover {
     transition: 0.4s ease-in-out;
     background-color: #fff;
     text-decoration: none;
@@ -87,8 +87,12 @@
         align-items: center;
     }
 
+    .barra {
+        margin-right: -9%;
+    }
+
     .listaNav {
-        margin-left: 40px;
+        margin-right: 2px;
     }
 
     .logo {

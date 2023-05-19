@@ -3,3 +3,10 @@
     padding: 0;
 }
 
+
+@media (max-width: 1140px) {
+    html, body{
+        overflow-x: hidden;
+        }
+  }
+

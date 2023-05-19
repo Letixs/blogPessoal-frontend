@@ -1,0 +1,13 @@
+.backgroundLogin {
+    background-image: url(../../assets/images/desktop-1920x1080.jpg);
+    background-size:cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}

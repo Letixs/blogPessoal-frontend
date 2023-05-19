@@ -13,13 +13,15 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar />
-        <Routes>
-        <Route path="/" element={<Home />}/>
+        <div style={{ minHeight: '40vw' }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/posts" element={<Posts />}/>
-            <Route path="/temas" element={<Temas />}/>
-            <Route path="/login" element={<Login />}/>
-        </ Routes>
+            <Route path="/posts" element={<Posts />} />
+            <Route path="/temas" element={<Temas />} />
+            <Route path="/login" element={<Login />} />
+          </ Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </>

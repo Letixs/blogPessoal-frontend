@@ -1,5 +1,5 @@
 .background {
-    background-image: url(../../assets/images/backg4.jpg);
+    background-image: url(../../assets/images/backg2.png);
     background-size:cover;
     background-position: center;
     height: 100vh;
@@ -10,7 +10,6 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-  
 }
 
 .home{
@@ -18,13 +17,38 @@
     height: 100%;
 }
 
+.welcome{
+    justify-content: start;
+    
+}
 
-@media (max-width: 600px) {
-    .home{
-        margin-top: 140px;
+.homeImg img{
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+    animation: updown 3s linear infinite;
+}
+
+@keyframes updown {
+    0% {
+        transform: translateY(-10px);
     }
-
-    .background{
-        background-position: 20%;
+    50% {
+        transform: translateY(10px);
+    }
+    100% {
+        transform: translateY(-10px);
     }
 }
+
+@media (max-width: 600px) {
+  .background{
+    width: 100vh;
+    height: 100vh;
+  }
+
+  .home{
+    padding-top: 130px;
+  }
+}
+
