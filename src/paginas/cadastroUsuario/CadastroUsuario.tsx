@@ -39,18 +39,13 @@ function CadastroUsuario() {
     }
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-        setUser({
-            ...user,
-            [e.target.name]: e.target.value
-        })
-
+        setUser({...user, [e.target.name]: e.target.value})
     }
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
         if (confirmarSenha == user.senha) {
-            cadastro(`/usuarios/cadastrar`, user, setUserResult)
-            alert('Usuario cadastrado')
+            await cadastro(`/usuarios/cadastrar`, user, setUserResult);
         } else {
             alert('Dados incorretos. Falha ao concluir cadastro.')
         }
