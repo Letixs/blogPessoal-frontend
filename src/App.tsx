@@ -8,6 +8,8 @@ import Temas from './paginas/temas/Temas'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
+import ListaTema from './components/temas/listatema/ListaTema';
+import ListaPostagem from './components/postagens/listapostagem/ListaPostagem';
 
 function App() {
   return (
@@ -18,8 +20,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/posts" element={<Posts />} />
-            <Route path="/temas" element={<Temas />} />
+            <Route path="/posts" element={<ListaPostagem />} />
+            <Route path="/temas" element={<ListaTema />} />
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<CadastroUsuario />} />
           </ Routes>
