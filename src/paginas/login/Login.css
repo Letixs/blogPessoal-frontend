@@ -1,13 +1,10 @@
 .backgroundLogin {
-    background-image: url(../../assets/images/desktop-1920x1080.jpg);
-    background-size: cover;
-    background-position: center;
-    min-height: 100vh; /* Ocupa toda a altura da tela */
-    width: 100%; /* Ocupa toda a largura da tela */
-   
-    top: 50px; /* Altura da navbar */
-    left: 0;
-    z-index: -1;
+  background-image: url(../../assets/images/backg2.png);
+  margin-top: 0;
+  padding: 260px 0 100px 0;
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
   }
 
   .textos1{
