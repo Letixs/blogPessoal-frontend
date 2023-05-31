@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
-import { Box } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 import './ListaPostagem.css';
 import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service';
@@ -38,47 +41,43 @@ function ListaPostagem() {
 
     return (
         <>
-            {
-                posts.map(post => (
-                    <Box m={2} >
-                        <Card variant="outlined">
-                            <CardContent>
-                                <Typography color="textSecondary" gutterBottom>
-                                    Postagens
-                                </Typography>
-                                <Typography variant="h5" component="h2">
-                                    {post.titulo}
-                                </Typography>
-                                <Typography variant="body2" component="p">
-                                    {post.texto}
-                                </Typography>
-                                <Typography variant="body2" component="p">
-                                    {post.tema?.tema}
-                                </Typography>
-                            </CardContent>
-                            <CardActions>
-                                <Box display="flex" justifyContent="center" mb={1.5}>
-
-                                    <Link to={`/formularioPost/${post.id}`} className="text-decorator-none" >
-                                        <Box mx={1}>
-                                            <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                                                atualizar
-                                            </Button>
-                                        </Box>
-                                    </Link>
-                                    <Link to={`/deletarPost/${post.id}`} className="text-decorator-none">
-                                        <Box mx={1}>
-                                            <Button variant="contained" size='small' color="secondary">
-                                                deletar
-                                            </Button>
-                                        </Box>
-                                    </Link>
-                                </Box>
-                            </CardActions>
-                        </Card>
-                    </Box>
-                ))
-            }
+            <div className='container-posts'>
+                {
+                    posts.map(post => (
+                        <Box m={2} >
+                            <Card className='card-posts'>
+                                <CardContent>
+                                    <div className='edition'>
+                                        <h3>{post.tema?.tema}</h3>
+                                        <div>
+                                            <button>
+                                                <Link to={`/formularioPost/${post.id}`}>
+                                                    <EditIcon className='button-edit' />
+                                                </Link>
+                                            </button>
+                                            <button>
+                                                <Link to={`/deletarPost/${post.id}`}>
+                                                    <DeleteIcon className='button-delete' />
+                                                </Link>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div className='date'>
+                                        <CalendarTodayIcon style={{fontSize: "medium"}}/>
+                                        <h5>{post.data}</h5>
+                                    </div>
+                                    <h1>{post.titulo}</h1>
+                                    <p>{post.texto}</p>
+                                    <div className='post-user'>
+                                        <img src={post.usuario?.foto} alt=" "/>
+                                        <h4>{post.usuario?.nome}</h4>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        </Box >
+                    ))
+                }
+            </div>
         </>
     );
 }

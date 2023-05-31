@@ -1,0 +1,127 @@
+.container-posts {
+    width: 1100px;
+    height: 100vh;
+    overflow: auto;
+    scrollbar-width: thin;
+}
+
+.container-posts::-webkit-scrollbar {
+    display: none;
+}
+
+.card-posts {
+    position: relative;
+    width: 1050px;
+    top: 110px;
+    padding: 4px;
+}
+
+.card-posts h1, h3, h4, h5, p{
+    margin-bottom: 8px;
+}
+
+.card-posts.MuiCard-root {
+    box-shadow: 4px 4px 16px 8px rgba(0, 0, 0, 0.059);
+}
+
+.card-posts p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    text-align: justify;
+    color: #121212d9;
+}
+
+.card-posts h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    color: #030303;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.card-posts h3 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #121212a8;
+}
+
+.card-posts h4{
+    margin-top: 8px;
+}
+
+.card-posts h5 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: #121212;
+    opacity: 0.5;
+}
+
+.date{
+    display: flex;
+}
+
+.date h5{
+    margin-left: 6px;
+    margin-top: 2px;
+}
+
+.icon-date{
+    color: #96999e;
+}
+
+.edition {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edition button {
+    color: black;
+    background-color: transparent;
+    border: transparent;
+    padding: 2px;
+    margin-right: 4px;
+}
+
+.edition button:hover {
+    transition: 0.32s ease-in-out;
+    background-color: #d1d8e34a;
+    border-radius: 100%;
+}
+
+.button-edit {
+    padding: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: #b5bac2;
+}
+
+.button-delete {
+    padding: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+    color: #b5bac2;
+}
+
+.post-user{
+    display: flex;
+    align-items: center;
+}
+
+.post-user img{
+    width: 25px;
+    border-radius: 100%;
+}
+
+.post-user h4{
+    margin-left: 8px;
+}
