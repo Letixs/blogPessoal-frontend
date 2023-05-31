@@ -7,7 +7,7 @@ import { login } from '../../services/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
 import { useDispatch } from 'react-redux';
-import { addToken } from '../../store/tokens/Actions';
+import { addId, addToken } from '../../store/tokens/Actions';
 
 function Login() {
 
@@ -18,11 +18,22 @@ function Login() {
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
+            nome: '',
             usuario: '',
             senha: '',
+            foto: '',
             token: ''
         }
     )
+
+    const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+        id: 0,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: '',
+        token: ''
+    })
 
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
@@ -33,17 +44,21 @@ function Login() {
     }
 
     useEffect(() => {
-        if (token !== '') {
-            //console.log("Token:", token)
-            dispatch(addToken(token));
-            navigate('/home')
+        if (respUserLogin.token !== "") {
+
+            console.log("Token: " + respUserLogin.token)
+            console.log("ID: " + respUserLogin.id)
+            
+            dispatch(addToken(respUserLogin.token))
+            dispatch(addId(respUserLogin.id.toString()))
+            navigate('/home');
         }
-    }, [token])
+    }, [respUserLogin.token])
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
         try {
-            await login(`/usuarios/logar`, userLogin, setToken)
+            await login(`/usuarios/logar`, userLogin, setRespUserLogin)
 
             alert('Usuário logado com sucesso!');
         } catch (error) {

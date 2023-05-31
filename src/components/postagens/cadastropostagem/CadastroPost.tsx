@@ -1,13 +1,14 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
 import './CadastroPost.css';
-import {useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Tema from '../../../models/Tema';
 import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import { busca, buscaId, post, put } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/Reducer';
+import User from '../../../models/User';
 
 function CadastroPost() {
     let navigate = useNavigate();
@@ -16,6 +17,10 @@ function CadastroPost() {
 
     const token = useSelector<TokenState, TokenState["tokens"]>(
         (state) => state.tokens
+    )
+
+    const userId = useSelector<TokenState, TokenState['id']>(
+        (state) => state.id
     )
 
     useEffect(() => {
@@ -31,17 +36,29 @@ function CadastroPost() {
             id: 0,
             tema: ''
         })
+
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
         titulo: '',
         texto: '',
-        tema: null
+        data: '',
+        tema: null,
+        usuario: null
     })
 
-    useEffect(() => { 
+    const [usuario, setUsuario] = useState<User>({
+        id: +userId,
+        nome: '',
+        usuario: '',
+        senha: '',
+        foto: ''
+    })
+
+    useEffect(() => {
         setPostagem({
             ...postagem,
-            tema: tema
+            tema: tema,
+            usuario: usuario
         })
     }, [tema])
 
