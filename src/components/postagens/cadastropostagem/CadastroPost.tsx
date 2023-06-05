@@ -106,6 +106,7 @@ function CadastroPost() {
             })
             alert('Postagem atualizada com sucesso');
         } else {
+            
             post(`/postagens`, postagem, setPostagem, {
                 headers: {
                     'Authorization': token
