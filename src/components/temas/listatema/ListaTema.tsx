@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import { Card, CardContent } from '@material-ui/core';
 import { Box } from '@mui/material';
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
+import PerfectScrollbar from 'react-perfect-scrollbar';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 import './ListaTema.css';
+import '../../postagens/listapostagem/ListaPostagem.css'
 import Tema from '../../../models/Tema';
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
@@ -39,41 +44,35 @@ function ListaTema() {
 
   return (
     <>
-      {
-        temas.map(tema => (
-          <Box m={2} >
-            <Card variant="outlined">
-              <CardContent>
-                <Typography color="textSecondary" gutterBottom>
-                  Tema
-                </Typography>
-                <Typography variant="h5" component="h2">
-                  {tema.tema}
-                </Typography>
+      <div className='container-temas'>
+        <Box m={2} >
+          <Card className='card-temas'>
+          <PerfectScrollbar>
+            <h3 className='titulo-temas'>Temas</h3>
+            {temas.map(tema => (
+              <CardContent>      
+                  <div className='edition'>
+                    <h3 className='temas'>{tema.tema}</h3>
+                    <div className='tema-edition'>
+                      <button>
+                        <Link to={`/formularioPost/${tema.id}`}>
+                          <EditIcon className='button-edit' />
+                        </Link>
+                      </button>
+                      <button>
+                        <Link to={`/deletarPost/${tema.id}`}>
+                          <DeleteIcon className='button-delete' />
+                        </Link>
+                      </button>
+                    </div>
+                  </div>   
               </CardContent>
-              <CardActions>
-                <Box display="flex" justifyContent="center" mb={1.5} >
-
-                  <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                        atualizar
-                      </Button>
-                    </Box>
-                  </Link>
-                  <Link to={`/deletarTema/${tema.id}`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
-                        deletar
-                      </Button>
-                    </Box>
-                  </Link>
-                </Box>
-              </CardActions>
-            </Card>
-          </Box>
-        ))
-      }
+            ))
+            }
+            </PerfectScrollbar>
+          </Card>
+        </Box>
+      </div>
     </>
   );
 }

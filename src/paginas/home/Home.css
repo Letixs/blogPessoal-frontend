@@ -1,27 +1,81 @@
 .background {
-    background-image: url(../../assets/images/backg2.png);
-    background-size:cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+    background-image: url(../../assets/images/backg10.png);
+    margin-top: 0;
+    padding: 140px 0 53px 0;
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.home{
-    padding-top: 95px;
+.home {
     height: 100%;
 }
 
 .welcome{
-    justify-content: start;
-    
+    justify-content: center;
+    align-items: center;
+    text-align:flex-start;
+    font-size: larger;
+    padding: 7rem;
+    color: aliceblue;
 }
 
-.homeImg img{
+.welcome h3{
+    display: inline-block;
+    padding: 3px;
+    border: 1px solid #fff;
+    background: linear-gradient(to right, #5717b0, #e034e3);
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.underlineAnimated{
+    animation: blink 1.5s infinite;
+}
+
+
+@keyframes blink{
+    0%, 49% {
+        opacity: 0;
+      }
+      50%, 100% {
+        opacity: 1;
+      }
+}
+
+.hello {
+    display: flex;
+}
+
+.welcome p{
+    color: rgb(233, 235, 237);
+}
+
+.cadastroHome{
+    border: none;
+    background: none;
+    font-weight: 400;
+    font-family: Roboto;
+    font-size:large;
+    color: #fff;
+    margin-top: 20px;
+    padding: 5px;
+    border: 1px solid ;
+    border-radius: 10px 10px;
+    cursor: pointer;
+}
+
+.cadastroHome:hover {
+    transition: 0.4s ease-in-out;
+    background-color: #fff;
+    text-decoration: none;
+    color: #5717b0;
+    font-size: large;
+    border: 1px solid rgb(255, 255, 255);
+}
+
+
+.homeImg img {
     display: flex;
     justify-content: center;
     width: 40vw;
@@ -32,22 +86,23 @@
     0% {
         transform: translateY(-10px);
     }
+
     50% {
         transform: translateY(10px);
     }
+
     100% {
         transform: translateY(-10px);
     }
 }
 
-@media (max-width: 600px) {
-  .background{
-    width: 100vh;
-    height: 100vh;
-  }
+@media (min-width: 1700px) {
+    .background {
+        width: 100vh;
+        height: 100vh;
+    }
 
-  .home{
-    padding-top: 130px;
-  }
+    .home {
+        padding-top: 130px;
+    }
 }
-

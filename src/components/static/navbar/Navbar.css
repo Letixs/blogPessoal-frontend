@@ -3,7 +3,19 @@
     justify-content: space-between;
     align-items: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 6px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+    transition:  0.32s ease-in-out;
+    background-color: #3e0d66da;
 }
+
+.navbar.scrolled {
+    padding: 0px 0;
+    background-color: #3e0d667a;
+  }
 
 .barra {
     margin-right: 80px;
@@ -16,7 +28,6 @@
 .listaNav {
     list-style-type: none;
     margin-right: 8px;
-    width: 65px;
 }
 
 .listaNav a {

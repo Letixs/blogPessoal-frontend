@@ -1,0 +1,43 @@
+.container-temas {
+    margin-left: 1100px;
+}
+
+.card-temas {
+    position: relative;
+    height: 400px;
+    top: 110px;
+}
+
+.card-temas h3{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+}
+
+.titulo-temas{
+
+}
+
+.temas {
+    font-size: 17px;
+    color: #41475E;
+    padding: 0px;
+}
+
+.tema-edition {
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s;
+}
+
+.edition:hover .tema-edition {
+    opacity: 1;
+  }
+
+
+.card-temas.MuiCard-root {
+    box-shadow: 4px 4px 16px 3px rgba(0, 0, 0, 0.059);
+}
+
+.tema {
+    display: flex;
+}
