@@ -55,12 +55,12 @@ function ListaTema() {
                     <h3 className='temas'>{tema.tema}</h3>
                     <div className='tema-edition'>
                       <button>
-                        <Link to={`/formularioPost/${tema.id}`}>
+                        <Link to={`/formularioTema/${tema.id}`}>
                           <EditIcon className='button-edit' />
                         </Link>
                       </button>
                       <button>
-                        <Link to={`/deletarPost/${tema.id}`}>
+                        <Link to={`/deletarTema/${tema.id}`}>
                           <DeleteIcon className='button-delete' />
                         </Link>
                       </button>
