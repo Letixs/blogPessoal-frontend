@@ -15,14 +15,17 @@ import DeletarPost from './components/postagens/deletarpostagem/DeletarPost';
 import { Provider } from 'react-redux';
 import store from './store/Store';
 import Perfil from './components/perfil/Perfil';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <>
       <Provider store={store} >
+        <ToastContainer style={{ paddingTop: '60px' }} />
         <BrowserRouter>
           <Navbar />
-          <div style={{ minHeight: '40vw', paddingTop: '60px' }}>
+          <div style={{ minHeight: '40vw', paddingTop: '50px' }}>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />

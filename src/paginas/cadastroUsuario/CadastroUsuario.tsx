@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './CadastroUsuario.css';
 import User from '../../models/User';
 import { cadastro, login } from '../../services/Service';
+import { toast } from 'react-toastify';
 
 
 
@@ -45,11 +46,46 @@ function CadastroUsuario() {
     }
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault();
+        e.preventDefault() 
+
         if (confirmarSenha == user.senha) {
-            await cadastro(`/usuarios/cadastrar`, user, setUserResult);
+
+            try {
+                await cadastro(`/usuarios/cadastrar`, user, setUserResult)
+                toast.success('Usuário cadastrado com sucesso', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined,
+                });
+            } catch (error) {
+                console.log(error)
+                toast.error("Erro ao cadastrar o Usuário! O Usuário já existe!", {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'colored',
+                    progress: undefined,
+                });
+            }
         } else {
-            alert('Dados incorretos. Falha ao concluir cadastro.')
+            toast.error("Erro ao cadastrar o Usuário! Verifique os dados e tente novamente.", {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'colored',
+                progress: undefined,
+            });
         }
     }
 

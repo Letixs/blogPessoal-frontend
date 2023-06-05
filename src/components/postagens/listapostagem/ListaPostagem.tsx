@@ -10,6 +10,7 @@ import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/Reducer';
+import ListaTema from '../../temas/listatema/ListaTema';
 
 function ListaPostagem() {
 
@@ -77,7 +78,9 @@ function ListaPostagem() {
                         </Box >
                     ))
                 }
+                
             </div>
+           
         </>
     );
 }

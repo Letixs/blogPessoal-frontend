@@ -3,6 +3,10 @@ import './Navbar.css'
 import { Link, useNavigate } from 'react-router-dom';
 import { Container } from '@mui/material';
 import useLocalStorage from 'react-use-localstorage';
+import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/Reducer';
+import { Action, addToken } from '../../../store/tokens/Actions';
 
 export default function Navbar() {
 
@@ -22,12 +26,26 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", onScroll);
     }, [])
 
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    )
+
+    const dispatch = useDispatch()
+
     let navigate = useNavigate();
 
-    function goLogout(){
-        setToken('')
-        alert("Usuário deslogado")
+    function goLogout() {
+        dispatch(addToken(''))
+        toast.info('Usuário Desconectado!', {
+            position: 'top-right',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: 'colored',
+            progress: undefined,
+        });
         navigate('/login')
     }
 
@@ -67,5 +85,9 @@ export default function Navbar() {
             </ul>
         </nav>
     );
+}
+
+function dispatch(arg0: Action) {
+    throw new Error('Function not implemented.');
 }
 
